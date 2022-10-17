@@ -34,7 +34,8 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Toast: () => Toast2
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -53,7 +54,8 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
+  test: "#ffff"
 };
 var space = {
   1: "0.25rem",
@@ -526,6 +528,77 @@ function MultiStep({ size, currentStep = 1 }) {
   });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Toast/index.tsx
+var import_phosphor_react3 = require("phosphor-react");
+
+// src/components/Toast/styles.ts
+var Toast = __toESM(require("@radix-ui/react-toast"));
+var Provider2 = styled(Toast.Provider, {
+  position: "absolute",
+  botton: "0",
+  right: "0"
+});
+var Viewport2 = styled(Toast.Viewport, {});
+var Root4 = styled(Toast.Root, {
+  listStyle: "none",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$sm",
+  padding: "12px 20px",
+  display: "flex",
+  alignItems: "flex-start",
+  gap: 4,
+  flexDirection: "column",
+  width: "22.5rem",
+  position: "relative"
+});
+var Close2 = styled(Toast.Close, {
+  position: "absolute",
+  right: "12px",
+  top: "12px",
+  background: "transparent",
+  border: 0,
+  color: "$gray200",
+  cursor: "pointer"
+});
+var Title = styled(Heading, {
+  color: "$white"
+});
+var Description = styled(Text, {
+  color: "$gray200"
+});
+
+// src/components/Toast/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Toast2({ description, title, props }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(Provider2, {
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(Root4, {
+        ...props,
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Title, {
+            size: "sm",
+            children: title
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Description, {
+            as: "time",
+            size: "sm",
+            children: description
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Close2, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_phosphor_react3.X, {
+              width: 12,
+              height: 12,
+              weight: "bold"
+            })
+          })
+        ]
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Viewport2, {})
+    ]
+  });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -536,5 +609,6 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast
 });

@@ -13,7 +13,8 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
+  test: "#ffff"
 };
 var space = {
   1: "0.25rem",
@@ -486,6 +487,77 @@ function MultiStep({ size, currentStep = 1 }) {
   });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Toast/index.tsx
+import { X } from "phosphor-react";
+
+// src/components/Toast/styles.ts
+import * as Toast from "@radix-ui/react-toast";
+var Provider2 = styled(Toast.Provider, {
+  position: "absolute",
+  botton: "0",
+  right: "0"
+});
+var Viewport2 = styled(Toast.Viewport, {});
+var Root4 = styled(Toast.Root, {
+  listStyle: "none",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$sm",
+  padding: "12px 20px",
+  display: "flex",
+  alignItems: "flex-start",
+  gap: 4,
+  flexDirection: "column",
+  width: "22.5rem",
+  position: "relative"
+});
+var Close2 = styled(Toast.Close, {
+  position: "absolute",
+  right: "12px",
+  top: "12px",
+  background: "transparent",
+  border: 0,
+  color: "$gray200",
+  cursor: "pointer"
+});
+var Title = styled(Heading, {
+  color: "$white"
+});
+var Description = styled(Text, {
+  color: "$gray200"
+});
+
+// src/components/Toast/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Toast2({ description, title, props }) {
+  return /* @__PURE__ */ jsxs4(Provider2, {
+    children: [
+      /* @__PURE__ */ jsxs4(Root4, {
+        ...props,
+        children: [
+          /* @__PURE__ */ jsx5(Title, {
+            size: "sm",
+            children: title
+          }),
+          /* @__PURE__ */ jsx5(Description, {
+            as: "time",
+            size: "sm",
+            children: description
+          }),
+          /* @__PURE__ */ jsx5(Close2, {
+            children: /* @__PURE__ */ jsx5(X, {
+              width: 12,
+              height: 12,
+              weight: "bold"
+            })
+          })
+        ]
+      }),
+      /* @__PURE__ */ jsx5(Viewport2, {})
+    ]
+  });
+}
 export {
   Avatar2 as Avatar,
   Box,
@@ -495,5 +567,6 @@ export {
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast2 as Toast
 };
