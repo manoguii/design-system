@@ -1,0 +1,2 @@
+import{A as t}from"./index.a2d05377.js";import"./index.ca608a9e.js";import"./iframe.ee9c0742.js";import"./index.97810fa5.js";import"./jsx-runtime.5bb209d1.js";const m={title:"Data Display/Avatar",component:t,args:{src:"https://github.com/manoguii.png",alt:"Guilherme David"},argTypes:{src:{control:{type:"text"}}}},p={},c={args:{src:void 0}},e=["Primary","WithFallback"];export{p as Primary,c as WithFallback,e as __namedExportsOrder,m as default};
+//# sourceMappingURL=Avatar.stories.4b4c3a3b.js.map
